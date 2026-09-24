@@ -4360,6 +4360,7 @@ export const en: TranslationMap & {
     nl: "Nederlands (Dutch)",
     fa: "فارسی (Persian)",
     ru: "Русский (Russian)",
+    sv: "Svenska (Swedish)",
   },
   secretsStore: {
     name: "Name",
