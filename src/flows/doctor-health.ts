@@ -290,11 +290,13 @@ async function runDoctorHealthFlowWithResult(
       const { noteSourceInstallIssues } = await import("../commands/doctor-install.js");
       const { noteStalePluginRuntimeSymlinks } =
         await import("../commands/doctor/shared/plugin-runtime-symlinks.js");
-      const { noteStartupOptimizationHints } = await import("../commands/doctor-platform-notes.js");
+      const { noteStartupOptimizationHints, noteWindowsAppContainerSpawnSupport } =
+        await import("../commands/doctor-platform-notes.js");
       await maybeRepairUiProtocolFreshness(doctorRuntime, prompter);
       noteSourceInstallIssues(root);
       await noteStalePluginRuntimeSymlinks(root);
       noteStartupOptimizationHints();
+      noteWindowsAppContainerSpawnSupport();
 
       const { loadAndMaybeMigrateDoctorConfig } = await import("../commands/doctor-config-flow.js");
       const configResult = await loadAndMaybeMigrateDoctorConfig({
